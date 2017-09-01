@@ -22,12 +22,11 @@ public class DragLaunch : MonoBehaviour {
 			return;
 		}
 
-		ball.transform.Translate (new Vector3 (amount, 0, 0));
+		Vector3 newPosition = ball.transform.position + new Vector3 (amount, 0, 0);
+		newPosition.x = Mathf.Clamp (newPosition.x, -40, 40);
 
-		Vector3 position = ball.transform.position;
-		position.x = Mathf.Clamp (position.x, -45, 45);
+		ball.transform.position = newPosition;
 
-		ball.transform.position = position;
 	}
 
 	// Capture time and position of drag start
