@@ -11,14 +11,12 @@ public class PinCounter : MonoBehaviour {
 	private bool ballOutOfPlay;
 	private float lastChangeTime;
 	private int lastSettledCount = 10;
-	private ActionManager actionManager;
 	private int lastStandingCount = -1;
 	private GameManager gameManager;
 
 	// Use this for initialization
 	void Start () {
 		gameManager = GameObject.FindObjectOfType<GameManager> ();
-		actionManager = new ActionManager ();
 		ballOutOfPlay = false;
 	}
 	

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ActionManager {
 
-	public enum Action { Reset, Tidy, EndTurn, EndGame, Undefined }
+	public enum Action { Reset, Tidy, EndTurn, EndGame }
 
 	private int[] bowls = new int[21];
 	private int bowl = 1;
@@ -62,7 +62,7 @@ public class ActionManager {
 			return Action.EndTurn;
 		}
 
-		return Action.Undefined;
+		throw new UnityException ("Undefined type of action");
 	}
 
 	private bool Bowl21Awarded () {
