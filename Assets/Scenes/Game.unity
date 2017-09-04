@@ -210,7 +210,7 @@ RectTransform:
   - {fileID: 1460933779}
   - {fileID: 1676148848}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1058,7 +1058,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4340096696652660, guid: b8f13bb935c68dc4cad1835eef593aca, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4562616825243632, guid: b8f13bb935c68dc4cad1835eef593aca, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1323,7 +1323,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1460933778
 GameObject:
@@ -1511,6 +1511,46 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
+--- !u!1 &1648966641
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1648966643}
+  - component: {fileID: 1648966642}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1648966642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1648966641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60c62f622ac67f443af3c9ee05bb0021, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1648966643
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1648966641}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1676148847
 GameObject:
   m_ObjectHideFlags: 0
@@ -1521,7 +1561,7 @@ GameObject:
   - component: {fileID: 1676148848}
   - component: {fileID: 1676148849}
   m_Layer: 5
-  m_Name: ActiveGutters
+  m_Name: ToggleGutter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1640,7 +1680,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4383042944589280, guid: 8a09c9a3730335c48b57ff5655880ab9, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a09c9a3730335c48b57ff5655880ab9, type: 2}
@@ -1682,19 +1722,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4414183074097862, guid: 33e70a8953fce2948abd80bd98c573c4, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 65760429820918478, guid: 33e70a8953fce2948abd80bd98c573c4,
+    - target: {fileID: 114179702778739692, guid: 33e70a8953fce2948abd80bd98c573c4,
         type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 65298419751298436, guid: 33e70a8953fce2948abd80bd98c573c4,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+      propertyPath: standingDisplay
+      value: 
+      objectReference: {fileID: 1000244482}
+    m_RemovedComponents:
+    - {fileID: 114033634677395626, guid: 33e70a8953fce2948abd80bd98c573c4, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 33e70a8953fce2948abd80bd98c573c4, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &1817375298 stripped
@@ -1817,7 +1853,7 @@ Transform:
   m_Children:
   - {fileID: 865488895}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1935771535
 BoxCollider:
@@ -1852,10 +1888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47b0d9df310787447b6c65456b070482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standingDisplay: {fileID: 1000244482}
-  lastStandingCount: -1
   pinSet: {fileID: 1199932036611790, guid: b8f13bb935c68dc4cad1835eef593aca, type: 2}
-  ballOutOfPlay: 0
 --- !u!95 &1935771538
 Animator:
   serializedVersion: 3
