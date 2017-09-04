@@ -5,16 +5,25 @@ using UnityEngine.UI;
 
 public class ScoreDisplay : MonoBehaviour {
 
-	public Text[] rolls, frames;
+	public Text[] rollTexts, frameTexts;
+ 
+	public void FillRolls(List<int> rolls) {
+		string scoreString = FormatRolls(rolls);
 
-	// Use this for initialization
-	void Start () {
-		rolls [0].text = "X";
-		frames [0].text = "0";
+		for (int i = 0; i < scoreString.Length; i++) {
+			rollTexts [i].text = scoreString [i].ToString ();
+		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	public void FillFrames(List<int> frames) {
+		for (int i = 0; i < frames.Count; i++) {
+			frameTexts [i].text = frames [i].ToString ();
+		}
+	}
+
+	public static string FormatRolls(List<int> rolls) {
+		string output = "";
+
+		return output;
 	}
 }

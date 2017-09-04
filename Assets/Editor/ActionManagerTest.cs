@@ -47,7 +47,7 @@ public class ActionManagerTest {
 
 	[Test]
 	public void T06_CheckEndGameAtBowl21() {
-		int[] rolls = {8,2, 7,3, 3,4, 10, 2,8, 10, 10, 8,0, 10, 8,2,9, 9};
+		int[] rolls = {8,2, 7,3, 3,4, 10, 2,8, 10, 10, 8,0, 10, 8,2,9};
 		Assert.AreEqual (endGame, ActionManager.NextAction(rolls.ToList()));
 	}
 

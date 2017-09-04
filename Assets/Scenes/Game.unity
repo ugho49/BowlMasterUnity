@@ -1294,7 +1294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 088b83ab83a50f04a9ee6175970e7a14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rolls:
+  rollTexts:
   - {fileID: 1094597340}
   - {fileID: 430496236}
   - {fileID: 1617131674}
@@ -1316,7 +1316,7 @@ MonoBehaviour:
   - {fileID: 2041164012}
   - {fileID: 798886318}
   - {fileID: 1162907529}
-  frames:
+  frameTexts:
   - {fileID: 1520219039}
   - {fileID: 69712323}
   - {fileID: 1095183818}
