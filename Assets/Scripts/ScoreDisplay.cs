@@ -24,6 +24,23 @@ public class ScoreDisplay : MonoBehaviour {
 	public static string FormatRolls(List<int> rolls) {
 		string output = "";
 
+		for (int i = 0; i < rolls.Count; i++) {
+			int box = output.Length + 1;
+			int current = rolls [i];
+
+			if (current == 0) {
+				output += "-";
+			} else if (box % 2 == 0 && rolls [i-1] + current == 10) {
+				output += "/";
+			} else if (box >= 19 && current == 10) {
+				output += "X";
+			} else if (current == 10) {
+				output += "X ";
+			} else {
+				output += current.ToString ();
+			}
+		}
+
 		return output;
 	}
 }
