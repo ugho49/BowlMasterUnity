@@ -100,4 +100,36 @@ public class ScoreMasterTest {
 
 		Assert.AreEqual (tidy, scoreMaster.Bowl (0));
 	}
+
+	[Test]
+	public void T10_BowlIndexTest() {
+		int[] rolls = {0, 10, 5};
+
+		foreach (int roll in rolls) {
+			scoreMaster.Bowl (roll);
+		}
+
+
+		Assert.AreEqual (endTurn, scoreMaster.Bowl (1));
+	}
+
+	[Test]
+	public void T11_10thFrameTurkey() {
+		int[] rolls = {1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1};
+
+		foreach (int roll in rolls) {
+			scoreMaster.Bowl (roll);
+		}
+
+
+		Assert.AreEqual (reset, scoreMaster.Bowl (10));
+		Assert.AreEqual (reset, scoreMaster.Bowl (10));
+		Assert.AreEqual (endGame, scoreMaster.Bowl (10));
+	}
+
+	[Test]
+	public void T12_OThen1EqualEndTurn() {
+		scoreMaster.Bowl (0);
+		Assert.AreEqual (endTurn, scoreMaster.Bowl (1));
+	}
 }

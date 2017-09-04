@@ -21,7 +21,7 @@ public class ScoreMaster {
 			return Action.EndGame;
 		}
 
-		if (bowl == 19 && pins == 10) {
+		if (bowl >= 19 && pins == 10) {
 			bowl++;
 			return Action.Reset;
 		} else if (bowl == 20) {
@@ -37,12 +37,13 @@ public class ScoreMaster {
 			}
 		}
 
-		if (pins == 10) {
-			bowl += 2;
-			return Action.EndTurn;
-		}
-
 		if (bowl % 2 != 0) {
+
+			if (pins == 10) {
+				bowl += 2;
+				return Action.EndTurn;
+			} 
+
 			bowl++;
 			return Action.Tidy;
 		} else {

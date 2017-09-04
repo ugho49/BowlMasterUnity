@@ -6,24 +6,30 @@ using UnityEngine.UI;
 public class PinSetter : MonoBehaviour {
 
 	public Text standingDisplay;
-	public int lastStandingCount = -1;
 	public GameObject pinSet;
 
+	private bool ballOutOfPlay;
 	private Ball ball;
 	private float lastChangeTime;
-	private bool ballEnteredBox;
+	private int lastSettledCount = 10;
+	private ScoreMaster scoreMaster;
+	private Animator animator;
+	private int lastStandingCount = -1;
 
 	// Use this for initialization
 	void Start () {
+		scoreMaster = new ScoreMaster ();
 		ball = GameObject.FindObjectOfType<Ball> ();
-		ballEnteredBox = false;
+		animator = GetComponent<Animator> ();
+		ballOutOfPlay = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		standingDisplay.text = CountStanding ().ToString ();
 
-		if (ballEnteredBox) {
+		if (ballOutOfPlay) {
+			standingDisplay.color = Color.red;
 			UpdateStandingCountAndSettle ();
 		}
 	}
@@ -74,22 +80,35 @@ public class PinSetter : MonoBehaviour {
 	}
 
 	void PinsHaveSettled() {
+		int standing = CountStanding ();
+		int pinFall = lastSettledCount - standing;
+		lastSettledCount = standing;
+
+		ScoreMaster.Action action = scoreMaster.Bowl (pinFall);
+		Debug.Log (action);
+
+		if (ScoreMaster.Action.Tidy == action) {
+			animator.SetTrigger ("Tidy");
+		} else if (ScoreMaster.Action.EndTurn == action || ScoreMaster.Action.Reset == action) {
+			lastSettledCount = 10;
+			animator.SetTrigger ("Reset");
+		} else if (ScoreMaster.Action.EndGame == action) {
+			animator.SetTrigger ("Reset");
+		}
+
 		ball.Reset ();
 		lastStandingCount = -1;
-		ballEnteredBox = false;
+		ballOutOfPlay = false;
 		standingDisplay.color = Color.green;
-	}
-
-	void OnTriggerEnter(Collider collider) {
-		if (collider.GetComponent<Ball>()) {
-			ballEnteredBox = true;
-			standingDisplay.color = Color.red;
-		}
 	}
 
 	void OnTriggerExit(Collider collider) {
 		if (collider.GetComponent<Pin>()) {
 			Destroy (collider.gameObject);
 		}
+	}
+
+	public void SetBallOutOfPlay(bool outOfPlay) {
+		ballOutOfPlay = outOfPlay;
 	}
 }
