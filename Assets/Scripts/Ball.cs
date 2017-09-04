@@ -9,37 +9,29 @@ public class Ball : MonoBehaviour {
 
 	private Rigidbody rigidBody;
 	private AudioSource audioSource;
-	private bool inPlay;
+	private DragLaunch dragLaunch;
 
 	// Use this for initialization
 	void Start () {
 		audioSource = GetComponent<AudioSource> ();
+		dragLaunch = GetComponent<DragLaunch> ();
 		rigidBody = GetComponent<Rigidbody> ();
 		rigidBody.useGravity = false;
-
-		inPlay = false;
 
 		initialPosition = transform.position;
 		initialRotation = transform.rotation;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
 	public void Launch(Vector3 velocity)
 	{
-		inPlay = true;
 		rigidBody.useGravity = true;
 		rigidBody.velocity = velocity;
 		audioSource.Play ();
 	}
 
 	public void Reset () {
-		inPlay = false;
-
 		transform.SetPositionAndRotation (initialPosition, initialRotation);
+		dragLaunch.SetBallIsReset ();
 		rigidBody.useGravity = false;
 		rigidBody.velocity = Vector3.zero;
 		rigidBody.angularVelocity = Vector3.zero;

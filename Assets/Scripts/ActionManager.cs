@@ -2,12 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScoreMaster {
+public class ActionManager {
 
 	public enum Action { Reset, Tidy, EndTurn, EndGame, Undefined }
 
 	private int[] bowls = new int[21];
 	private int bowl = 1;
+
+	public static Action NextAction(List<int> pinsFalls) {
+		ActionManager am = new ActionManager ();
+		Action currentAction = new Action ();
+
+		foreach (int pinfall in pinsFalls) {
+			currentAction = am.Bowl (pinfall);
+		}
+
+		return currentAction;
+	}
 
 	public Action Bowl(int pins) {
 

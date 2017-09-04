@@ -7,18 +7,19 @@ public class PinSetter : MonoBehaviour {
 
 	public Text standingDisplay;
 	public GameObject pinSet;
+	public float settleTime = 2f;
 
 	private bool ballOutOfPlay;
 	private Ball ball;
 	private float lastChangeTime;
 	private int lastSettledCount = 10;
-	private ScoreMaster scoreMaster;
+	private ActionManager actionManager;
 	private Animator animator;
 	private int lastStandingCount = -1;
 
 	// Use this for initialization
 	void Start () {
-		scoreMaster = new ScoreMaster ();
+		actionManager = new ActionManager ();
 		ball = GameObject.FindObjectOfType<Ball> ();
 		animator = GetComponent<Animator> ();
 		ballOutOfPlay = false;
@@ -36,6 +37,7 @@ public class PinSetter : MonoBehaviour {
 
 	public void RaisePins() {
 		foreach(Pin pin in GameObject.FindObjectsOfType<Pin>()) {
+			pin.transform.rotation = Quaternion.Euler (270f, 0f, 0f);
 			pin.Raise ();
 		}
 	}
@@ -71,9 +73,7 @@ public class PinSetter : MonoBehaviour {
 			lastStandingCount = currentStanding;
 			return;
 		}
-
-		float settleTime = 2f;
-
+			
 		if ((Time.time - lastChangeTime) > settleTime) {
 			PinsHaveSettled ();
 		}
@@ -84,15 +84,15 @@ public class PinSetter : MonoBehaviour {
 		int pinFall = lastSettledCount - standing;
 		lastSettledCount = standing;
 
-		ScoreMaster.Action action = scoreMaster.Bowl (pinFall);
+		ActionManager.Action action = actionManager.Bowl (pinFall);
 		Debug.Log (action);
 
-		if (ScoreMaster.Action.Tidy == action) {
+		if (ActionManager.Action.Tidy == action) {
 			animator.SetTrigger ("Tidy");
-		} else if (ScoreMaster.Action.EndTurn == action || ScoreMaster.Action.Reset == action) {
+		} else if (ActionManager.Action.EndTurn == action || ActionManager.Action.Reset == action) {
 			lastSettledCount = 10;
 			animator.SetTrigger ("Reset");
-		} else if (ScoreMaster.Action.EndGame == action) {
+		} else if (ActionManager.Action.EndGame == action) {
 			animator.SetTrigger ("Reset");
 		}
 

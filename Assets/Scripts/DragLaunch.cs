@@ -32,9 +32,9 @@ public class DragLaunch : MonoBehaviour {
 	// Capture time and position of drag start
 	public void DragStart() {
 
-		/*if (ballIsLaunch) {
+		if (ballIsLaunch) {
 			return;
-		}*/
+		}
 
 		dragStart = Input.mousePosition;
 		startTime = Time.time;
@@ -43,9 +43,9 @@ public class DragLaunch : MonoBehaviour {
 	// Launch the ball
 	public void DragEnd() {
 
-		/*if (ballIsLaunch) {
+		if (ballIsLaunch) {
 			return;
-		}*/
+		}
 
 		ballIsLaunch = true;
 
@@ -58,5 +58,9 @@ public class DragLaunch : MonoBehaviour {
 
 		Vector3 launchVelocity = new Vector3 (launchSpeedX, 0, launchSpeedZ);
 		ball.Launch (launchVelocity);
+	}
+
+	public void SetBallIsReset() {
+		ballIsLaunch = false;
 	}
 }
