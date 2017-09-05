@@ -635,7 +635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.225}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.55}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1237,9 +1237,9 @@ RectTransform:
   - {fileID: 2096554747}
   - {fileID: 985514962}
   - {fileID: 1909914234}
-  - {fileID: 1192996092}
   - {fileID: 2110145061}
   - {fileID: 1947899286}
+  - {fileID: 1192996092}
   - {fileID: 1980173719}
   - {fileID: 1598791658}
   m_Father: {fileID: 160541659}
@@ -1305,12 +1305,12 @@ MonoBehaviour:
   - {fileID: 283007731}
   - {fileID: 1798373266}
   - {fileID: 2070332963}
-  - {fileID: 142809263}
-  - {fileID: 1394192668}
   - {fileID: 1565573672}
   - {fileID: 487081316}
   - {fileID: 985613547}
   - {fileID: 1283030394}
+  - {fileID: 142809263}
+  - {fileID: 1394192668}
   - {fileID: 1966104592}
   - {fileID: 1093314083}
   - {fileID: 2041164012}
@@ -1322,9 +1322,9 @@ MonoBehaviour:
   - {fileID: 1095183818}
   - {fileID: 1573181608}
   - {fileID: 1709783785}
-  - {fileID: 216385203}
   - {fileID: 446527990}
   - {fileID: 1484182523}
+  - {fileID: 216385203}
   - {fileID: 514203442}
   - {fileID: 300348500}
 --- !u!1 &590147267
@@ -1692,7 +1692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.225}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.55}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2015,7 +2015,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.225}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.55}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2632,7 +2632,7 @@ GameObject:
   - component: {fileID: 1192996094}
   - component: {fileID: 1192996093}
   m_Layer: 5
-  m_Name: Frame 06
+  m_Name: Frame 08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2652,7 +2652,7 @@ RectTransform:
   - {fileID: 1394192667}
   - {fileID: 216385202}
   m_Father: {fileID: 557306914}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2671,7 +2671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.225}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.55}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3561,7 +3561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.225}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.55}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4138,8 +4138,7 @@ Prefab:
       propertyPath: standingDisplay
       value: 
       objectReference: {fileID: 1000244482}
-    m_RemovedComponents:
-    - {fileID: 114033634677395626, guid: 33e70a8953fce2948abd80bd98c573c4, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 33e70a8953fce2948abd80bd98c573c4, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &1817375298 stripped
@@ -4198,7 +4197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.225}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.55}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4397,7 +4396,7 @@ GameObject:
   - component: {fileID: 1947899288}
   - component: {fileID: 1947899287}
   m_Layer: 5
-  m_Name: Frame 08
+  m_Name: Frame 07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4417,7 +4416,7 @@ RectTransform:
   - {fileID: 1283030393}
   - {fileID: 1484182522}
   m_Father: {fileID: 557306914}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4436,7 +4435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.225}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.55}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4581,7 +4580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.225}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.55}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4899,7 +4898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.225}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.55}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5005,7 +5004,7 @@ GameObject:
   - component: {fileID: 2110145063}
   - component: {fileID: 2110145062}
   m_Layer: 5
-  m_Name: Frame 07
+  m_Name: Frame 06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5025,7 +5024,7 @@ RectTransform:
   - {fileID: 487081315}
   - {fileID: 446527989}
   m_Father: {fileID: 557306914}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5044,7 +5043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.225}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.55}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

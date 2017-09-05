@@ -68,7 +68,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4828968630707138}
   - component: {fileID: 65199810938545668}
-  - component: {fileID: 114033634677395626}
   - component: {fileID: 114179702778739692}
   m_Layer: 0
   m_Name: Box
@@ -389,18 +388,6 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114033634677395626
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1505106773307822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 366c1af846a000d44bde09398f4b8acf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pinSetter: {fileID: 0}
 --- !u!114 &114179702778739692
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -413,7 +400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standingDisplay: {fileID: 0}
-  settleTime: 2
+  settleTime: 3
 --- !u!114 &114261091284246008
 MonoBehaviour:
   m_ObjectHideFlags: 1
